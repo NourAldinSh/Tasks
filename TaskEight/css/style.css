@@ -1,0 +1,286 @@
+:root {
+  --main-color: #23d4ce;
+}
+body {
+  font-family: "Metropolis", sans-serif;
+}
+/* Start Nav */
+.navbar {
+  border-bottom: 1px solid #ccc;
+}
+/* NavBG Color Start */
+.BgColour {
+  color: black;
+  transition: all 0.25s ease;
+  background-color: rgb(32, 32, 32);
+  border-bottom: 1px solid #ccc;
+}
+/* NavBG Color End */
+.navbar .navbar-toggler {
+  color: white;
+  border: none;
+}
+.navbar .nav-link {
+  color: white !important;
+  transition: all 0.25s ease;
+  font-weight: 500;
+  font-size: 14px;
+}
+.navbar .nav-link:hover {
+  color: var(--main-color) !important;
+}
+.navbar .btns a {
+  padding: 10px 20px;
+  font-size: 14px;
+  text-decoration: none;
+}
+.navbar .btns a:first-child {
+  color: white;
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+.navbar .btns a:first-child:hover {
+  color: var(--main-color);
+}
+.navbar .btns a:first-child img {
+  width: 25px;
+  height: 25px;
+}
+.navbar .btns a:nth-child(2) {
+  background-color: white;
+  border-radius: 6px;
+  color: var(--main-color);
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+.navbar .btns a:nth-child(2):hover {
+  background-color: var(--main-color);
+  color: white;
+}
+.navbar .btns a:last-child {
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+.navbar .btns a:last-child:hover {
+  background-color: white;
+  color: var(--main-color);
+}
+@media (max-width: 1199px) {
+  .navbar .navbar-brand img {
+    width: 150px;
+  }
+}
+@media (max-width: 991px) {
+  .navbar .navbar-brand img {
+    width: unset;
+  }
+}
+@media (max-width: 577px) {
+  .navbar .navbar-brand img {
+    width: 150px;
+  }
+}
+/* End Nav */
+/* Start Landing */
+.landing {
+  min-height: 100vh;
+  background-image: url(../images/landing.png);
+  background-size: cover;
+}
+.landing h1 {
+  font-size: 50px;
+}
+.landing h1 span {
+  color: var(--main-color);
+}
+.landing p {
+  color: #efefef;
+  font-size: 25px;
+  max-width: 540px;
+}
+.landing a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: var(--main-color);
+  border-radius: 6px;
+  display: block;
+  width: fit-content;
+  padding: 10px 20px;
+  transition: all 0.25s ease;
+}
+.landing a:hover {
+  color: var(--main-color);
+  background-color: white;
+}
+@media (max-width: 991px) {
+  .landing h1 {
+    font-size: 40px;
+  }
+  .landing p {
+    font-size: 22px;
+  }
+}
+@media (max-width: 577px) {
+  .landing h1 {
+    font-size: 30px;
+  }
+  .landing p {
+    font-size: 18px;
+  }
+}
+/* End Landing */
+/* Start Features */
+.features {
+  background-color: #f7f7f7;
+}
+.features h2,
+.testimonials h2 {
+  font-size: 36px;
+  color: #333333;
+  width: fit-content;
+  cursor: pointer;
+}
+.features h2::before,
+.testimonials h2::before {
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 4px;
+  bottom: 0px;
+  transition: all 0.25s ease;
+  background-color: var(--main-color);
+}
+.features h2:hover::before,
+.testimonials h2:hover::before {
+  width: 100%;
+}
+.features .box {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  position: relative;
+}
+.features img {
+  transition: all 0.25s ease;
+}
+.features .box:hover img {
+  transform: scale(1.1);
+}
+.features .box::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background: rgba(80, 217, 215, 0.2);
+  transition: all 0.25s ease;
+}
+.features .box:hover::before {
+  width: 100%;
+  height: 100%;
+}
+.features .image {
+  width: 70px;
+  height: 70px;
+}
+.features .box h3 {
+  color: #333333;
+}
+.features .box p {
+  color: #52565f;
+}
+/* End Features */
+/* Start Testimonials */
+.testimonials .container {
+  background-image: url(../images/earth.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: calc(100vh - 250px);
+}
+.testimonials .main-title p {
+  color: #52565f;
+}
+.testimonials .box {
+  position: absolute;
+}
+@media (max-width: 1399px) {
+  .testimonials .box {
+    position: unset;
+  }
+}
+.testimonials .one {
+  top: 125px;
+  left: 95px;
+}
+.testimonials .two {
+  top: 410px;
+  left: 175px;
+}
+.testimonials .three {
+  top: 275px;
+  left: 450px;
+}
+.testimonials .four {
+  top: 115px;
+  left: 662px;
+}
+.testimonials .five {
+  top: 239px;
+  left: 929px;
+}
+.testimonials .six {
+  top: 496px;
+  left: 1018px;
+}
+.testimonials .box p {
+  max-width: 300px;
+}
+.testimonials .box > img {
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  transition: all 0.25s ease;
+  border-radius: 50%;
+  z-index: 3;
+}
+.testimonials .box .text {
+  border-radius: 30px;
+  border: 1px solid #c4c4c4;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+  position: relative;
+}
+.testimonials .box .text::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border: 12px solid transparent;
+  border-bottom-color: white;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.testimonials .box > img:hover + .text {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (max-width: 1399px) {
+  .testimonials .box .text {
+    transform: unset;
+    opacity: unset;
+  }
+}
+@media (max-width: 767px) {
+  .testimonials .main-title p {
+    font-size: 18px !important;
+  }
+}
+/* End Testimonials */
