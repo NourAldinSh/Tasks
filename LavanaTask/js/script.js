@@ -1,38 +1,80 @@
-const mobileBreakpoint = 768;
-let iScreenWidth = document.body.getBoundingClientRect().width;
-initSlider();
-function initSlider() {
-  const sliders = document.querySelectorAll(".js-mobile-slider");
-  let aFlickitySliders = [];
-  function initFlickity(slider) {
-    return new Flickity(slider, {
-      cellAlign: "left",
-      prevNextButtons: false,
-    });
-  }
-  for (let i = 0; i < sliders.length; i++) {
-    const slider = sliders[i];
-    if (iScreenWidth < mobileBreakpoint) {
-      let oSlider = initFlickity(slider);
-      aFlickitySliders.push(oSlider);
-    }
-  }
-  window.addEventListener("resize", () => {
-    iScreenWidth = document.body.getBoundingClientRect().width;
-    for (let i = 0; i < sliders.length; i++) {
-      const oSlider = sliders[i];
-      const oFlickSlider = aFlickitySliders[i];
-      if (iScreenWidth < mobileBreakpoint) {
-        if (!oFlickSlider) {
-          let createdFlickSlider = initFlickity(oSlider);
-          aFlickitySliders.push(createdFlickSlider);
-        }
-      } else {
-        if (oFlickSlider) {
-          oFlickSlider.destroy();
-          aFlickitySliders.splice(0, 1);
-        }
-      }
-    }
-  });
-}
+$(".offer-slider").slick({
+  rtl: true,
+  dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 580,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        variableWidth: true,
+      },
+    },
+  ],
+});
+
+$(".offer-v2-slider").slick({
+  rtl: true,
+  dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 580,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        variableWidth: true,
+      },
+    },
+  ],
+});

@@ -485,45 +485,48 @@ a {
 .offers,
 .offers-v2 {
   background-color: #fff6f2;
-  max-width: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  padding: 48px 16px;
 }
-@media (max-width: 767px) {
-  .offers .row,
-  .offers-v2 .row {
-    display: block;
-  }
-  .offers .col,
-  .offers-v2 .col {
-    width: calc(100% - 16px) !important;
-    margin: 0 8px;
-    min-width: 280px;
-    flex: 1;
-  }
+.offers .col,
+.offers-v2 .col {
+  width: calc(100% - 16px) !important;
+  margin: 0 8px;
 }
-.flickity-page-dots {
-  padding: 0;
-  margin: 15px 0 0;
-  list-style: none;
-  text-align: center;
-  line-height: 1;
+.slick-dots {
+  bottom: -35px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
 }
-.flickity-page-dots .dot {
-  display: inline-block;
+.slick-dots li {
+  width: 20px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  cursor: unset;
+  transition: var(--main-transition);
+}
+.slick-dots li.slick-active button {
+  opacity: 1;
+  width: 20px;
+  border-radius: 50px;
+}
+.slick-dots li button {
   width: 10px;
   height: 10px;
-  margin: 0 8px;
   background: var(--main-color);
   border-radius: 50%;
   opacity: 0.25;
   cursor: pointer;
+  margin: 0;
+  transition: var(--main-transition);
 }
-.flickity-page-dots .dot.is-selected {
-  opacity: 1;
-  width: 20px;
-  border-radius: 25px;
+.slick-dots li button:hover {
+  opacity: 0.5;
+}
+.slick-dots li button::before {
+  all: unset;
 }
 .offers-title span {
   color: var(--main-color);
@@ -641,6 +644,12 @@ a {
   }
   .offers .box .content .price span {
     font-size: 14px;
+  }
+}
+@media (max-width: 767px) {
+  .offers .box,
+  .offers-v2 .box {
+    max-width: 250px;
   }
 }
 @media (max-width: 399px) {
